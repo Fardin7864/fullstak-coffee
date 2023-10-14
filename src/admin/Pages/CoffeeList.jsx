@@ -1,6 +1,8 @@
+import { Link, useNavigate } from "react-router-dom";
 
 const CoffeeList = ({coffee, deleteCoffee}) => {
     const {_id, name, price, test, photo } = coffee || {};
+    const navigate = useNavigate();
 
     const handleDelete = id =>{
         deleteCoffee(id);
@@ -23,7 +25,7 @@ const CoffeeList = ({coffee, deleteCoffee}) => {
           </div>
           <div className=" flex justify-between w-full px-28">
             <button onClick={() => handleDelete(_id)} className=" btn btn-primary">Delete</button>
-            <button className=" btn btn-primary">Update</button>
+            <Link to={`/admin/update/${_id}`} className=" btn btn-primary">Update</Link>
           </div>
         </div>
       </div>

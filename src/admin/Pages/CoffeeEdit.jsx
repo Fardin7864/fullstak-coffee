@@ -40,7 +40,6 @@ const CoffeeEdit = () => {
           });    
      }
 
-
     return (
         <div>
         <h3 className=" text-5xl font-semibold text-center">This is coffees</h3>

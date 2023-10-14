@@ -7,7 +7,6 @@ const AddCoffee = () => {
      const handleSubmit = (e) => { 
         e.preventDefault();
         const coffee = {name: e.target.name.value, price: e.target.price.value, test: e.target.test.value, photo: e.target.photo.value}
-        console.log(coffee)
         fetch('http://localhost:5000/coffees',{
             method: "POST",
             headers: {
@@ -17,7 +16,6 @@ const AddCoffee = () => {
         })
         .then(res => res.json())
         .then(data =>{
-            console.log(data)
             if (data.acknowledged) {
                 e.target.reset();
                 Swal.fire({
